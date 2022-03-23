@@ -8,8 +8,8 @@
 <div class="container">
   <header>
     <nav>
-      <a href="{{ route('admin.home') }}"><button class="btn btn-show">Home</button></a>
-      <a href="{{route('admin.posts.index')}}"><button class="btn btn-show">Back to Posts</button></a>
+      <a href="{{ route('admin.home') }}"><button class="btn btn-show"><i class="fas fa-home"></i></button></a>
+      <a href="{{route('admin.posts.index')}}"><button class="btn btn-show"><i class="fas fa-arrow-left"></i> Back to Posts</button></a>
     </nav>
   </header>
 

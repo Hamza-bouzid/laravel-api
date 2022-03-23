@@ -15,4 +15,14 @@ class PostController extends Controller
          return response()->json($posts);
        
     }
+
+    //Search
+    public function search($title) {
+        
+        //Richiesta titolo che contiene $title
+         $posts = Post::where('title', 'like', '%'.$title.'%')->get();
+
+         return response()->json($posts);
+       
+    }
 }

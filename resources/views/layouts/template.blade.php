@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ route('admin.home') }}">
+          Boolpress
+        </a>
+      </nav>
     <div class="container">
         @yield('content')
     </div>

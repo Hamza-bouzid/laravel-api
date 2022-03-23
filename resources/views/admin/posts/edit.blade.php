@@ -8,7 +8,7 @@
 <div class="container">
   <header>
     <nav>
-      <a href="{{route('admin.posts.index')}}"><button class="btn btn-show">Posts</button></a>
+      <a href="{{route('admin.posts.index')}}"><button class="btn btn-show"><i class="fas fa-arrow-left"></i> Posts</button></a>
     </nav>
     <h2>Edit {{$post->title}}</h2>
   </header>
@@ -64,7 +64,7 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Save</button>
     </form>
   </main>
 
