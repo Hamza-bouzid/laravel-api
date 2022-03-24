@@ -11044,5 +11044,7 @@ h1 {
 .img-table {
   width: 80px;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 

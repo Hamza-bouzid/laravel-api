@@ -19,7 +19,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Rotte Publiche
 //Route::get("/posts", "Api\PostController@index");
 Route::get('posts' , [PostController::class, 'index']);
-Route::get('posts/search/{title}' , [PostController::class, 'searchPost']);
+Route::get('posts/search/{title}' , [PostController::class, 'search']);
+Route::get('posts/{id}' , [PostController::class, 'show']);
 //Route::resource('posts', PostController::class);
+
+// Rotte Protette
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    //Route::get('posts/search/{title}' , [PostController::class, 'search']);
+    //Route::get('posts/{id}' , [PostController::class, 'show']);
+});
