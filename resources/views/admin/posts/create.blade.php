@@ -68,3 +68,13 @@
 
 </div>
 @endsection
+
+@section('scripts')
+<script>
+  ClassicEditor
+      .create( document.querySelector( '#content' ) )
+      .catch( error => {
+          console.error( error );
+      } );
+</script>
+@endsection

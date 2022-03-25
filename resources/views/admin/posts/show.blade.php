@@ -16,7 +16,7 @@
   <main>
     <div class="show">
       <h2>{{$post->title}}</h2>
-      <p>{{$post->content}}</p>
+      <p>{!!$post->content!!}</p>
       @if($post->image)
       <img src="{{asset("storage/{$post->image}")}}">
       @endif

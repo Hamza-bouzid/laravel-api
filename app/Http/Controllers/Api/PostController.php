@@ -4,15 +4,18 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
+use App\Tag;
 use App\Post;
 
 class PostController extends Controller
 {
     public function index() {
         
-         $posts = Post::all();
+        $posts = Post::all();
+        $categories = Category::all();
 
-         return response()->json($posts);
+        return response()->json(["posts" => $posts, "categories" => $categories]);
        
     }
 

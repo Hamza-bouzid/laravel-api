@@ -1993,11 +1993,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      categories: []
     };
   },
   methods: {
@@ -2005,8 +2016,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("api/posts").then(function (response) {
-        _this.posts = response.data;
-        console.log(_this.posts);
+        _this.posts = response.data.posts;
+        _this.categories = response.data.categories;
+        console.log(response.data);
       })["catch"](function (error) {
         console.log(error);
       });
@@ -37687,7 +37699,27 @@ var render = function () {
       return _c("div", { key: index, staticClass: "post" }, [
         _c("h2", [_vm._v(_vm._s(post.title))]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(post.content))]),
+        _c("p", { domProps: { innerHTML: _vm._s(post.content) } }),
+        _vm._v(" "),
+        post.category_id
+          ? _c(
+              "div",
+              _vm._l(_vm.categories, function (category) {
+                return _c("div", { key: category.slug }, [
+                  post.category_id == category.id
+                    ? _c("span", [
+                        _vm._v(
+                          "\n                    Category: " +
+                            _vm._s(category.name) +
+                            "\n                "
+                        ),
+                      ])
+                    : _vm._e(),
+                ])
+              }),
+              0
+            )
+          : _c("div", [_c("span", [_vm._v("Category: -")])]),
       ])
     }),
     0

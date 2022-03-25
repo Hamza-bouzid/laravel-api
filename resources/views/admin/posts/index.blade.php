@@ -26,7 +26,7 @@
         @foreach ($posts as $post)
         <tr>
           <th scope="row">{{$post->title}}</th>
-          <td>{{$post->content}}</td>
+          <td>{!!$post->content!!}</td>
           <td>{{$post->category ? $post->category->name : '-'}}</td>
           <td>
             @if($post->image)
