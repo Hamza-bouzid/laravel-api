@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('front');
+// });
 
 Auth::routes();
 
@@ -31,3 +31,7 @@ Route::middleware('auth')
 
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get("{any?}", function() {
+    return view("front");
+})->where("any", ".*");

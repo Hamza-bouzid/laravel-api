@@ -12,10 +12,9 @@ class PostController extends Controller
 {
     public function index() {
         
-        $posts = Post::all();
-        $categories = Category::all();
-
-        return response()->json(["posts" => $posts, "categories" => $categories]);
+        $posts = Post::with(["category", "tags"])->get();
+        
+        return response()->json($posts);
        
     }
 
